@@ -49,13 +49,13 @@ listarDirectores peliculas = map director peliculas
 main :: IO ()
 main = do
   putStrLn "Títulos de las películas:"  -- Imprime un título para la sección.
-  print $ imprimirTitulos listaPeliculas  -- Imprime los títulos de las películas.
+  mapM_ putStrLn (imprimirTitulos listaPeliculas)  -- Imprime los títulos de las películas.
 
   putStrLn "\nPelículas de Christopher Nolan: "  -- Imprime otro título de sección.
-  print $ peliculasPorDirector " Christopher Nolan " listaPeliculas  -- Muestra películas de C. Nolan.
+  mapM_ putStrLn (peliculasPorDirector " Christopher Nolan " listaPeliculas)  -- Muestra películas de C. Nolan.
 
   putStrLn "\nPelículas del año 2014:"  -- Título de la siguiente sección.
-  print $ peliculasPorAnio 2014 listaPeliculas  -- Muestra películas del año 2014.
+  mapM_ putStrLn (peliculasPorAnio 2014 listaPeliculas)  -- Muestra películas del año 2014.
 
   putStrLn "\nDirectores en la lista:"  -- Título de la última sección.
-  print $ listarDirectores listaPeliculas  -- Imprime la lista de directores.
+  mapM_ putStrLn (listarDirectores listaPeliculas)  -- Imprime la lista de directores.
